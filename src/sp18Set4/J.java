@@ -1,4 +1,4 @@
-package sp18set4;
+package sp18Set4;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
