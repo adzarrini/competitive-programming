@@ -7,41 +7,38 @@ import java.io.OutputStreamWriter;
 
 // Battle Simulation
 public class J {
+	
+	public static boolean stringCompare(String a) {
+		boolean same = true;
+		if(a.charAt(0) == a.charAt(1) || a.charAt(1) == a.charAt(2) || a.charAt(2) == a.charAt(0)) same = false;
+		return same;
+	}
+	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
 		String l = br.readLine();
-		String out = "";
 		for(int i = 0; i < l.length(); i++) {
-			if(l.charAt(i) == 'R') out += 'S';
-			if(l.charAt(i) == 'B') out += 'K';
-			if(l.charAt(i) == 'L') out += 'H';
-			
-			String temp = "";
-			if (i < l.length() - 2) temp = l.substring(i, i+3);
-			else temp = l.substring(i);
-			
-			for(int j = 0; j < temp.length(); j++) {
-				
-			}
-			if(temp.contains("R") && temp.contains("B") && temp.contains("L")) {
-				out += 'C';
+			if (i < l.length() - 2 && stringCompare(l.substring(i, i+3))) {
+				bw.write('C');
 				i += 2;
-			}
+			}		
 			else {
-				if(i == out.length()-3) {
-					out += temp;
+				switch(l.charAt(i)) {
+				case 'R': 
+					bw.write('S');
+					break;
+				case 'B': 
+					bw.write('K');
+					break;
+				case 'L': 
+					bw.write('H');
 					break;
 				}
-				else out += temp.charAt(0);
 			}
-			
-			
 		}
 
-		bw.write(out);
 		bw.flush();
 	}
-
 }
