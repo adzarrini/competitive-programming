@@ -20,7 +20,7 @@ public class A {
 		
 		
 		double dang = Math.PI / M;
-		double dr = R / N;
+		double dr = (R / N);
 		
 		double[][] grid = new double[M][N];
 		for(int i = 0; i < M; i++) {
@@ -31,8 +31,8 @@ public class A {
 		ArrayList<Double> adj = new ArrayList<Double>();
 		for(int i = 0; i < M; i++) {
 			for(int j = 0; j < N; j++) {
-				if((ax+i)%M+1 < M) adj.add(grid[(ax+i)%M+1][(ay+j)%N]+dang);
-				if((ax+i)%M-1 >= 0) adj.add(grid[(ax+i)%M-1][(ay+j)%N]+dang);
+				if((ax+i)%M+1 < M) adj.add(grid[(ax+i)%M+1][(ay+j)%N]+dang*((ay+j)%N));
+				if((ax+i)%M-1 >= 0) adj.add(grid[(ax+i)%M-1][(ay+j)%N]+dang*((ay+j)%N));
 				if((ay+j)%N+1 < N) adj.add(grid[(ax+i)%M][(ay+j)%N+1]+dr);
 				if((ay+j)%N-1 >= 0) adj.add(grid[(ax+i)%M][(ay+j)%N-1]+dr);
 				double min = Double.MAX_VALUE;
