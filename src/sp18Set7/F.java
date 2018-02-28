@@ -2,7 +2,6 @@ package sp18Set7;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
 
 // Progressive Scramble
 public class F {
