@@ -78,5 +78,4 @@ public class A {
 		return a == b;
 	}
 	
->>>>>>> 508fa22174d957ed6ec5a1436be899a719c64a81
 }
