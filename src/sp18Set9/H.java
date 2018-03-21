@@ -42,7 +42,7 @@ public class H {
 				else xm = Math.max(x1, x2) - change;
 			}
 			else {
-				change = x3;
+				change = x3/2;
 				if(Math.min(x1, x2) + change <= 8) {
 					xm = Math.min(x1, x2) + change;
 				}
