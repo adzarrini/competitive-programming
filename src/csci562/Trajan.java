@@ -31,8 +31,6 @@ public class Trajan {
 			}
 			edgeList.put(c, temp);
 		}
-		//System.out.println(vertex.toString());
-		//System.out.println(edgeList.toString());
 
 		for(char c : vertex.keySet()){
 			Node v = vertex.get(c);
@@ -40,7 +38,6 @@ public class Trajan {
 				strongConnect(v);
 			}
 		}
-		
 		// print out result
 		System.out.println(SCCs.size());
 		for(int i = 0; i < SCCs.size(); i++) {
@@ -54,8 +51,7 @@ public class Trajan {
 	
 	public static void strongConnect(Node v) {
 		v.found = true;
-		v.index = index;
-		v.lowlink = index;
+		v.index = index; v.lowlink = index;
 		index++;
 		stack.push(v);
 		v.onStack = true;
@@ -84,22 +80,13 @@ public class Trajan {
 	}
 	
 	static class Node {
-		int index=0;
-		int lowlink=0;
-		char name;
-		boolean onStack = false;
-		boolean found = false;
+		int index=0; int lowlink=0;char name;
+		boolean onStack = false; boolean found = false;
 		Node(char name) {
 			this.name = name;
 		}
-				
 		public String toString() {
 			return name+"";
 		}
-
 	}
-
-	
-	// state is either w, g, or b for white, gray or black
-
 }
