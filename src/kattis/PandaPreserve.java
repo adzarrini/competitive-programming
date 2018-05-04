@@ -1,4 +1,4 @@
-package csci562;
+package kattis;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -14,15 +14,17 @@ public class PandaPreserve {
 		StringTokenizer s;
 		for(int i = 0; i < n; i++) {
 			s = new StringTokenizer(br.readLine());
-			points[i] = new Point(Integer.parseInt(s.nextToken()),Integer.parseInt(s.nextToken()));
+			points[i] = new Point(Double.parseDouble(s.nextToken()),Double.parseDouble(s.nextToken()));
 		}
 		//System.out.println(Arrays.toString(points));
+		Line l = new Line(points[1],points[2]);
+		System.out.println(l);
 	}
 	
 	static class Point {
-		int x;
-		int y;
-		Point(int x, int y) {
+		double x;
+		double y;
+		Point(double x, double y) {
 			this.x = x;
 			this.y = y;
 		}
@@ -30,5 +32,21 @@ public class PandaPreserve {
 		public String toString() {
 			return "x: "+this.x+" y: "+this.y;
 		}
+	}
+	
+	static class Line {
+		double m;
+		double b;
+		Line(Point p1, Point p2) {
+			m = (p2.y-p1.y)/(p2.x-p1.x);
+			b = p1.y-m*p1.x;
+		}
+		public String toString() {
+			return "m: "+this.m+" b: "+this.b;
+		}
+//		public Point intersect(Line l) {
+//			double x = 
+//		}
+		
 	}
 }
