@@ -12,8 +12,8 @@ public class Loowater {
             int m = Integer.parseInt(s.nextToken());
             if(n == 0 && m == 0) break;
 
-            int heads[] = new int[n];
-            int knights[] = new int[m];
+            Integer heads[] = new Integer[n];
+            Integer knights[] = new Integer[m];
 
             for (int i = 0; i < n; i++) {
                 heads[i] = Integer.parseInt(br.readLine());
